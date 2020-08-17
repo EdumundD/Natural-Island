@@ -1,7 +1,3 @@
 Natural-Island.code-workspace
 Packages/manifest.json
 Packages/packages-lock.json
-ProjectSettings/AudioManager.asset
-ProjectSettings/ClusterInputManager.asset
-ProjectSettings/EditorBuildSettings.asset
-ProjectSettings/DynamicsManager.asset
