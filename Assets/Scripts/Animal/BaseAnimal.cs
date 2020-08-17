@@ -13,7 +13,7 @@ public class BaseAnimal : BaseObject
     public int Thirst; //口渴度 0-100
     public int ThirstConsume; //口渴消耗 0-100/s
     public int DesireToMate; //交配欲望 0-100
-    public int Speed; //移动速度 0-5s/次 
+    public int Speed; //移动速度 0-5s/次
     public int PhysicalStrength; //体力 0-100
     public int PhysicalStrengthConsume; //体力消耗 0-100/s
 
@@ -22,7 +22,7 @@ public class BaseAnimal : BaseObject
     public Transform tr;
     private Vector3 nowPosition;
     private Vector3 nextMovePosition = Vector3.zero;
-    
+
     public BaseAnimal()
     {
         Hp = 100;
@@ -39,10 +39,12 @@ public class BaseAnimal : BaseObject
         PhysicalStrengthConsume = 1;
     }
 
-    private void FixUpdate() {
-        if(nextMovePosition != Vector3.zero){
+    private void FixUpdate()
+    {
+        if (nextMovePosition != Vector3.zero)
+        {
             tr.position = Vector3.MoveTowards(nowPosition, nextMovePosition, Speed * Time.deltaTime);
-            if(Vector3.Distance(tr.position, nextMovePosition) < 0.1)
+            if (Vector3.Distance(tr.position, nextMovePosition) < 0.1)
             {
                 tr.position = nextMovePosition;
                 nextMovePosition = Vector3.zero;
@@ -51,14 +53,15 @@ public class BaseAnimal : BaseObject
     }
 
     //每秒消耗
-    public void ConsumptionPerSecond(){
+    public void ConsumptionPerSecond()
+    {
         Hunger -= HungerConsume; //饥饿消耗
         Thirst -= ThirstConsume; //口渴消耗
     }
     public void MoveTo(Vector3 position)
     {
-        if()
-        nowPosition = tr.position;
+        if ()
+            nowPosition = tr.position;
         nextMovePosition = position;
     }
 }
