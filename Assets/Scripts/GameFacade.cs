@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameFacade
+public static class GameFacade
 {
     private static GameFacade instance = null;
     private static readonly object padlock = new object();

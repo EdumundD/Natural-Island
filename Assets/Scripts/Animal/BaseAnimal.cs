@@ -1,5 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+public enum AnimalKind : BaseObjectKind
+{
+    Wolf,
+    Deer
+}
+
 public class BaseAnimal : BaseObject
 {
     //属性
@@ -60,7 +66,7 @@ public class BaseAnimal : BaseObject
     }
     public void MoveTo(Vector3 position)
     {
-        if ()
+        if (//TODO)
             nowPosition = tr.position;
         nextMovePosition = position;
     }

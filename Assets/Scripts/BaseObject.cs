@@ -1,15 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
-public enum BaseState{
-    Rest,
-    Eating,
-    Moving,
-    Hunting,
-    BeingHunting,
-    Growing
+
+public enum BaseObjectKind{
+    None,
 }
-public class BaseObject: MonoBehaviour
+
+public class BaseObject : MonoBehaviour
 {
-    private BaseState nowState;
-    private BaseState PreviousState;
+    protected BaseObjectKind m_type = BaseObjectKind.None;
+    protected object m_unit = null;
+    private Transform m_tr = null;
+    private StateMachine m_stateMachine;
+
+    public StateMachine StateMachine
+    {
+        get { return m_stateMachine; }
+        set { m_stateMachine = value; }
+    }
 }
